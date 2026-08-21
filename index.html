@@ -134,6 +134,13 @@
     background:linear-gradient(135deg, var(--teal-400), var(--navy-700));
     display:flex; align-items:center; justify-content:center;
     color:#fff; font-size:1.05rem; flex:none;
+    overflow:hidden;
+  }
+  .brand-mark img.logo-img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
   }
   .brand small{display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:.68rem; color:var(--teal-300); text-transform:uppercase; letter-spacing:.08em;}
 
@@ -560,8 +567,10 @@
 <header class="site-header">
   <div class="wrap">
     <a href="#top" class="brand">
-      <img src="iconiii.png" alt="Icon" class="logo-img" onerror="this.style.display='none';document.getElementById('brand-mark').style.display='flex'">
-      <span class="brand-mark"><i class="ti ti-flask-2"></i></span>
+      <span class="brand-mark">
+        <img src="iconiii.png" alt="III Encontro de Farmacologia" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <i class="ti ti-flask-2" style="display:none;"></i>
+      </span>
       <span>III Encontro de<br>Farmacologia<small>Curso de Farmácia · Estácio</small></span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
@@ -874,9 +883,12 @@
       <div class="partner-grid">
 
         <!-- ===== MODELO DE CARTÃO — PATROCINADOR =====
-             Mesma lógica do cartão de organização acima: troque o nome,
-             troque o ícone pela logo (via <img>) e copie o bloco para
-             adicionar mais patrocinadores. -->
+             1) Troque "Nome do patrocinador" pelo nome real.
+             2) Para usar uma logo, apague a linha do <i class="ti ti-photo"></i>
+                e descomente a linha do <img>, ajustando "caminho-da-logo.png".
+             3) Para adicionar mais patrocinadores, copie este bloco inteiro
+                (do <div class="partner-card"> até o </div> correspondente)
+                e cole quantas vezes precisar dentro do mesmo .partner-grid. -->
         <div class="partner-card">
           <div class="partner-logo">
             <i class="ti ti-photo"></i>
@@ -907,12 +919,9 @@
       <div class="partner-grid">
 
         <!-- ===== MODELO DE CARTÃO — ORGANIZAÇÃO =====
-             1) Troque "Nome da organização" pelo nome real.
-             2) Para usar uma logo, apague a linha do <i class="ti ti-photo"></i>
-                e descomente a linha do <img>, ajustando "caminho-da-logo.png".
-             3) Para adicionar mais organizadores, copie este bloco inteiro
-                (do <div class="partner-card"> até o </div> correspondente)
-                e cole quantas vezes precisar dentro do mesmo .partner-grid. -->
+             Mesma lógica do cartão de patrocinador acima: troque o nome,
+             troque o ícone pela logo (via <img>) e copie o bloco para
+             adicionar mais organizadores. -->
         <div class="partner-card">
           <div class="partner-logo">
             <i class="ti ti-photo"></i>
@@ -933,8 +942,6 @@
         </div>
 
       </div>
-
-      
     </div>
   </section>
 
@@ -962,7 +969,10 @@
     <div class="footer-top">
       <div>
         <a href="#top" class="brand">
-          <span class="brand-mark"><i class="ti ti-flask-2"></i></span>
+          <span class="brand-mark">
+            <img src="iconiii.png" alt="III Encontro de Farmacologia" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <i class="ti ti-flask-2" style="display:none;"></i>
+          </span>
           <span>III Encontro de<br>Farmacologia</span>
         </a>
       </div>
