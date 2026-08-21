@@ -469,17 +469,60 @@
   .loc-visual{
     position:relative;
     border-radius:var(--radius-lg);
-    aspect-ratio:4/3.6;
-    background:
-      radial-gradient(120% 120% at 20% 0%, var(--navy-700), var(--navy-950) 70%);
+    aspect-ratio:4/3.3;
+    background:var(--navy-950);
     overflow:hidden;
-    display:flex; align-items:center; justify-content:center;
+    box-shadow:var(--shadow-soft);
   }
-  .loc-visual svg{width:70%; height:70%; opacity:.9;}
-  .loc-visual::after{
-    content:"";
-    position:absolute; inset:0;
-    background:radial-gradient(circle at 50% 50%, transparent 30%, rgba(5,15,33,.5) 100%);
+  .loc-visual iframe{
+    width:100%; height:100%; border:0; display:block; filter:saturate(.92);
+  }
+  .loc-visual .loc-caption{
+    position:absolute; left:14px; bottom:14px;
+    background:rgba(10,31,61,.88);
+    color:var(--teal-300);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem; letter-spacing:.04em;
+    padding:8px 14px; border-radius:999px;
+    pointer-events:none;
+    border:1px solid rgba(143,232,218,.28);
+  }
+
+  /* ---------- Partners / Organization ---------- */
+  .partners{background:var(--paper);}
+  .partners-subhead{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:600;
+    color:var(--navy-900);
+    margin:8px 0 18px;
+  }
+  .partners-subhead:not(:first-of-type){margin-top:44px;}
+  .partners-subhead::before{content:""; width:20px; height:2px; background:var(--teal-500); display:inline-block;}
+  .partner-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+    gap:16px;
+  }
+  .partner-card{
+    border:1.5px dashed rgba(14,26,43,.28);
+    border-radius:var(--radius-md);
+    padding:20px;
+    background:#fff;
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    transition:border-color .3s ease, transform .3s var(--ease);
+  }
+  .partner-card:hover{border-color:var(--teal-500); transform:translateY(-4px);}
+  .partner-logo{
+    width:100%; aspect-ratio:16/9;
+    border:1.5px dashed rgba(14,26,43,.22);
+    border-radius:10px;
+    background:var(--paper-dim);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--mist); font-size:1.5rem;
+  }
+  .partner-name{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.76rem; color:var(--mist); text-align:center; letter-spacing:.02em;
   }
 
   /* ---------- Final CTA ---------- */
@@ -526,6 +569,7 @@
       <li><a href="#pilares">Pilares</a></li>
       <li><a href="#programacao">Programação</a></li>
       <li><a href="#local">Local</a></li>
+      <li><a href="#organizacao">Realização</a></li>
       <li><a href="#inscricao">Inscrição</a></li>
     </ul>
     <div class="nav-cta">
@@ -809,22 +853,84 @@
           <i class="ti ti-map-2"></i> Ver no mapa
         </a>
       </div>
-      <div class="loc-visual reveal" aria-hidden="true">
-        <svg viewBox="0 0 200 200" fill="none">
-          <circle cx="100" cy="100" r="6" fill="#8fe8da"/>
-          <circle cx="60" cy="60" r="4" fill="#3bc9b4"/>
-          <circle cx="140" cy="55" r="4" fill="#3bc9b4"/>
-          <circle cx="150" cy="140" r="4" fill="#3bc9b4"/>
-          <circle cx="50" cy="145" r="4" fill="#3bc9b4"/>
-          <circle cx="100" cy="30" r="3" fill="#8fe8da"/>
-          <circle cx="100" cy="170" r="3" fill="#8fe8da"/>
-          <line x1="100" y1="100" x2="60" y2="60" stroke="#3bc9b4" stroke-width="1.4" opacity=".7"/>
-          <line x1="100" y1="100" x2="140" y2="55" stroke="#3bc9b4" stroke-width="1.4" opacity=".7"/>
-          <line x1="100" y1="100" x2="150" y2="140" stroke="#3bc9b4" stroke-width="1.4" opacity=".7"/>
-          <line x1="100" y1="100" x2="50" y2="145" stroke="#3bc9b4" stroke-width="1.4" opacity=".7"/>
-          <line x1="60" y1="60" x2="100" y2="30" stroke="#3bc9b4" stroke-width="1" opacity=".5"/>
-          <line x1="50" y1="145" x2="100" y2="170" stroke="#3bc9b4" stroke-width="1" opacity=".5"/>
-        </svg>
+      <div class="loc-visual reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d814.2645161626144!2d-39.304845046722996!3d-7.247216650540735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a17865feacb2cb%3A0x3548c79b9f5c61b4!2sEst%C3%A1cio%20Juazeiro%20do%20Norte!5e1!3m2!1spt-BR!2sbr!4v1787316126186!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa — Estácio Campus Cidade Universitária, Juazeiro do Norte"></iframe>
+        <span class="loc-caption"><i class="ti ti-map-pin"></i> Estácio — Cidade Universitária</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS / ORGANIZATION (placeholders — editar depois) -->
+  <section class="partners" id="organizacao">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Realização &amp; apoio</span>
+        <h2>Organização e Patrocinadores</h2>
+        <p>Espaço reservado para as marcas e instituições parceiras do evento. Lista em atualização.</p>
+      </div>
+
+      <h3 class="partners-subhead">Organização</h3>
+      <div class="partner-grid">
+
+        <!-- ===== MODELO DE CARTÃO — ORGANIZAÇÃO =====
+             1) Troque "Nome da organização" pelo nome real.
+             2) Para usar uma logo, apague a linha do <i class="ti ti-photo"></i>
+                e descomente a linha do <img>, ajustando "caminho-da-logo.png".
+             3) Para adicionar mais organizadores, copie este bloco inteiro
+                (do <div class="partner-card"> até o </div> correspondente)
+                e cole quantas vezes precisar dentro do mesmo .partner-grid. -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <i class="ti ti-photo"></i>
+            <!-- <img src="caminho-da-logo.png" alt="Nome da organização" style="width:100%;height:100%;object-fit:contain;padding:10px;"> -->
+          </div>
+          <span class="partner-name">Nome da organização</span>
+        </div>
+        <!-- ===== FIM DO MODELO ===== -->
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome da organização</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome da organização</span>
+        </div>
+
+      </div>
+
+      <h3 class="partners-subhead">Patrocinadores</h3>
+      <div class="partner-grid">
+
+        <!-- ===== MODELO DE CARTÃO — PATROCINADOR =====
+             Mesma lógica do cartão de organização acima: troque o nome,
+             troque o ícone pela logo (via <img>) e copie o bloco para
+             adicionar mais patrocinadores. -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <i class="ti ti-photo"></i>
+            <!-- <img src="caminho-da-logo.png" alt="Nome do patrocinador" style="width:100%;height:100%;object-fit:contain;padding:10px;"> -->
+          </div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+        <!-- ===== FIM DO MODELO ===== -->
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+
       </div>
     </div>
   </section>
