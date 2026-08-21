@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>III Encontro de Farmacologia — Estácio</title>
+<meta name="description" content="III Encontro de Farmacologia: Ciência, Inovação e Prática Farmacêutica em Diferentes Cenários de Atuação. 22 a 25 de Setembro de 2026, Estácio Campus Cidade Universitária, Juazeiro do Norte – CE.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+<style>
+  :root{
+    --navy-950:#050f21;
+    --navy-900:#0a1f3d;
+    --navy-800:#123059;
+    --navy-700:#1a4278;
+    --teal-500:#0fa894;
+    --teal-400:#3bc9b4;
+    --teal-300:#8fe8da;
+    --paper:#f4f7fb;
+    --paper-dim:#e8eef6;
+    --ink:#0e1a2b;
+    --mist:#66768f;
+    --amber-400:#f0b64c;
+    --line:rgba(14,26,43,.10);
+    --line-inv:rgba(255,255,255,.16);
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:10px;
+    --shadow-soft:0 20px 50px -25px rgba(6,20,40,.35);
+    --ease:cubic-bezier(.22,.9,.28,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  .mono{font-family:'JetBrains Mono',monospace;}
+
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  .visually-hidden{
+    position:absolute; width:1px;height:1px;overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap;
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--amber-400);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.95rem;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .25s ease, border-color .25s ease;
+  }
+  .btn-primary{
+    background:var(--teal-500);
+    color:#05221c;
+    box-shadow:0 14px 30px -12px rgba(15,168,148,.55);
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 36px -12px rgba(15,168,148,.65);}
+  .btn-ghost{
+    background:transparent;
+    color:inherit;
+    border-color:currentColor;
+    opacity:.85;
+  }
+  .btn-ghost:hover{opacity:1; transform:translateY(-2px);}
+  .btn-sm{padding:10px 18px; font-size:.82rem;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,31,61,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-inv);
+    color:#eef4fa;
+  }
+  .site-header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+    gap:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600; font-size:.95rem;
+    line-height:1.15;
+    text-decoration:none;
+  }
+  .brand-mark{
+    width:34px; height:34px; border-radius:10px;
+    background:linear-gradient(135deg, var(--teal-400), var(--navy-700));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:1.05rem; flex:none;
+  }
+  .brand small{display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:.68rem; color:var(--teal-300); text-transform:uppercase; letter-spacing:.08em;}
+
+  .nav-links{
+    display:flex; align-items:center; gap:28px;
+    list-style:none; margin:0; padding:0;
+    font-size:.9rem; font-weight:500;
+  }
+  .nav-links a{text-decoration:none; opacity:.82; transition:opacity .2s ease;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:820px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:flex-start; gap:0;
+      background:var(--navy-900);
+      border-bottom:1px solid var(--line-inv);
+      max-height:0; overflow:hidden;
+      transition:max-height .35s var(--ease);
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links li{width:100%;}
+    .nav-links a{display:block; padding:16px 24px; width:100%; border-top:1px solid var(--line-inv);}
+    .nav-toggle{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:10px;
+      background:rgba(255,255,255,.08); border:1px solid var(--line-inv);
+      color:#eef4fa; font-size:1.1rem; cursor:pointer;
+    }
+    .nav-cta .btn-sm-desktop{display:none;}
+  }
+  @media (min-width:821px){
+    .nav-toggle{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(120% 140% at 15% 0%, var(--navy-700) 0%, var(--navy-900) 45%, var(--navy-950) 100%);
+    color:#eef4fa;
+    padding:88px 0 120px;
+    overflow:hidden;
+  }
+  .hero-net{
+    position:absolute; inset:0;
+    opacity:.55;
+    pointer-events:none;
+  }
+  .hero-net circle{fill:var(--teal-300); opacity:.55;}
+  .hero-net line{stroke:var(--teal-300); stroke-opacity:.22; stroke-width:1;}
+  .hero-net .pulse{animation:pulse 5s ease-in-out infinite;}
+  @keyframes pulse{
+    0%,100%{opacity:.35; r:2.4;}
+    50%{opacity:.9; r:3.6;}
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:56px;
+    align-items:end;
+  }
+  @media (max-width:940px){
+    .hero-inner{grid-template-columns:1fr;}
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.76rem; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--teal-300);
+    background:rgba(143,232,218,.08);
+    border:1px solid rgba(143,232,218,.28);
+    padding:8px 16px; border-radius:999px;
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--teal-300); animation:pulseDot 1.8s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:.4;} 50%{opacity:1;}}
+
+  .hero h1{
+    font-size:clamp(2.5rem, 5.4vw, 4.1rem);
+    line-height:1.03;
+    font-weight:700;
+    max-width:15ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg, var(--teal-300), var(--teal-500) 60%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero .subtitle{
+    margin-top:22px;
+    font-size:clamp(1.02rem,1.6vw,1.2rem);
+    color:#c6d5e6;
+    max-width:46ch;
+    line-height:1.55;
+  }
+  .hero .actions{
+    display:flex; flex-wrap:wrap; gap:14px;
+    margin-top:38px;
+  }
+  .hero .slogan{
+    margin-top:44px;
+    font-size:.88rem;
+    color:var(--teal-300);
+    border-left:2px solid var(--teal-500);
+    padding-left:14px;
+    line-height:1.6;
+    max-width:36ch;
+  }
+
+  /* Specimen label card */
+  .label-card{
+    background:#f7faf9;
+    color:var(--ink);
+    border-radius:var(--radius-md);
+    padding:26px 26px 22px;
+    box-shadow:var(--shadow-soft);
+    position:relative;
+    transform:rotate(1.4deg);
+  }
+  .label-card::before{
+    content:"";
+    position:absolute; inset:10px;
+    border:1.4px dashed rgba(14,26,43,.22);
+    border-radius:12px;
+    pointer-events:none;
+  }
+  .label-head{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--mist);
+    margin-bottom:16px;
+    padding-bottom:14px;
+    border-bottom:1px dashed var(--line);
+  }
+  .label-head b{color:var(--teal-500);}
+  .label-row{
+    display:flex; gap:14px; align-items:flex-start;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .label-row:last-of-type{border-bottom:none;}
+  .label-row i{font-size:1.15rem; color:var(--teal-500); margin-top:2px;}
+  .label-row .k{font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; color:var(--mist); font-family:'JetBrains Mono',monospace;}
+  .label-row .v{font-weight:600; font-size:.98rem; margin-top:2px;}
+  .label-card .lot{
+    margin-top:16px; padding-top:14px; border-top:1px dashed var(--line);
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'JetBrains Mono',monospace; font-size:.66rem; color:var(--mist); text-transform:uppercase; letter-spacing:.08em;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .kicker{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--teal-500);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:14px;
+  }
+  .kicker::before{content:""; width:26px; height:2px; background:var(--teal-500); display:inline-block;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem); line-height:1.1;}
+  .section-head p{margin-top:14px; color:var(--mist); font-size:1.02rem; line-height:1.6; max-width:52ch;}
+
+  /* ---------- Pillars ---------- */
+  .pillars{background:var(--paper);}
+  .pillar-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  @media (max-width:920px){.pillar-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.pillar-grid{grid-template-columns:1fr;}}
+  .pillar-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:28px 22px;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+  }
+  .pillar-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-soft); border-color:transparent;}
+  .pillar-icon{
+    width:50px; height:50px; border-radius:14px;
+    background:linear-gradient(135deg, var(--navy-800), var(--teal-500));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:1.3rem;
+    margin-bottom:18px;
+  }
+  .pillar-card h3{font-size:1.1rem; margin-bottom:8px;}
+  .pillar-card p{margin:0; font-size:.92rem; color:var(--mist); line-height:1.55;}
+
+  /* ---------- Program / blister tabs ---------- */
+  .program{background:var(--navy-950); color:#eef4fa; position:relative;}
+  .program::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(60% 60% at 85% 0%, rgba(15,168,148,.14), transparent 60%);
+    pointer-events:none;
+  }
+  .program .section-head p{color:#a9bbd1;}
+  .program .kicker{color:var(--teal-300);}
+  .program .kicker::before{background:var(--teal-300);}
+
+  .blister{
+    position:relative; z-index:1;
+    display:flex;
+    gap:10px;
+    padding:14px;
+    border-radius:999px;
+    margin-bottom:44px;
+    overflow-x:auto;
+    background:
+      repeating-radial-gradient(circle at 18px 18px, rgba(255,255,255,.35) 0 2px, transparent 3px 24px),
+      linear-gradient(135deg,#dfe7ee,#b7c3d1 55%,#dbe4ec);
+    box-shadow:inset 0 2px 6px rgba(255,255,255,.5), inset 0 -6px 14px rgba(10,20,35,.18);
+  }
+  .blister::-webkit-scrollbar{height:6px;}
+
+  .pill-tab{
+    position:relative;
+    flex:1 0 auto;
+    min-width:132px;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    background:transparent;
+    font-family:inherit;
+  }
+  .pill-cavity{
+    position:relative;
+    border-radius:999px;
+    border:1.5px dashed rgba(10,20,35,.28);
+    padding:4px;
+  }
+  .pill-capsule{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:2px;
+    border-radius:999px;
+    padding:12px 10px;
+    background:linear-gradient(135deg, var(--navy-700) 50%, var(--teal-400) 50%);
+    color:#fff;
+    box-shadow:0 8px 16px -8px rgba(6,16,30,.5), inset 0 1px 0 rgba(255,255,255,.25);
+    transform:scale(.94);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease), filter .3s ease;
+    filter:saturate(.7) brightness(.92);
+  }
+  .pill-capsule .d{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1rem; line-height:1;}
+  .pill-capsule .w{font-size:.6rem; text-transform:uppercase; letter-spacing:.06em; opacity:.85;}
+
+  .pill-tab[aria-selected="true"] .pill-capsule{
+    transform:scale(1.08) translateY(-3px);
+    box-shadow:0 16px 30px -10px rgba(15,168,148,.55), inset 0 1px 0 rgba(255,255,255,.35);
+    filter:saturate(1) brightness(1);
+  }
+  .pill-tab[aria-selected="true"] .pill-cavity{border-color:rgba(15,168,148,.5); border-style:solid;}
+  .pill-tab:hover .pill-capsule{filter:saturate(.95) brightness(1.02);}
+
+  .day-panel{display:none;}
+  .day-panel.active{display:block; animation:fadeUp .5s var(--ease);}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+  .day-heading{
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    margin-bottom:28px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line-inv);
+  }
+  .day-heading .num{font-family:'JetBrains Mono',monospace; color:var(--teal-300); font-size:1rem;}
+  .day-heading h3{font-size:1.5rem;}
+  .day-heading .tag{
+    margin-left:auto;
+    font-family:'JetBrains Mono',monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--navy-950); background:var(--teal-300); padding:6px 12px; border-radius:999px;
+  }
+
+  .agenda{list-style:none; margin:0; padding:0; display:flex; flex-direction:column;}
+  .agenda-item{
+    display:grid;
+    grid-template-columns:96px 1fr;
+    gap:20px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line-inv);
+  }
+  .agenda-item:last-child{border-bottom:none; padding-bottom:0;}
+  .agenda-time{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.85rem; font-weight:600; color:var(--teal-300);
+    padding-top:2px;
+  }
+  .agenda-time span{display:block; font-size:.62rem; color:#7f93ac; text-transform:uppercase; letter-spacing:.06em; margin-top:3px; font-weight:500;}
+  .agenda-body h4{
+    font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:600; margin:0 0 8px;
+    line-height:1.3;
+  }
+  .agenda-body p{margin:0; color:#a9bbd1; font-size:.92rem; line-height:1.6;}
+  .agenda-body .duration{
+    display:inline-block; margin-top:8px;
+    font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--amber-400);
+  }
+
+  @media (max-width:600px){
+    .agenda-item{grid-template-columns:1fr;}
+    .agenda-time{display:flex; align-items:baseline; gap:8px;}
+  }
+
+  /* ---------- Location ---------- */
+  .location{background:var(--paper);}
+  .loc-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (max-width:860px){.loc-grid{grid-template-columns:1fr;}}
+  .loc-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:36px; box-shadow:var(--shadow-soft);
+  }
+  .loc-card .li{display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .loc-card .li:last-child{border-bottom:none; padding-bottom:0;}
+  .loc-card .li:first-child{padding-top:0;}
+  .loc-card i{font-size:1.4rem; color:var(--teal-500); flex:none;}
+  .loc-card .k{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--mist); font-family:'JetBrains Mono',monospace;}
+  .loc-card .v{font-weight:600; margin-top:4px; line-height:1.4;}
+
+  .loc-visual{
+    position:relative;
+    border-radius:var(--radius-lg);
+    aspect-ratio:4/3.3;
+    background:var(--navy-950);
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+  }
+  .loc-visual iframe{
+    width:100%; height:100%; border:0; display:block; filter:saturate(.92);
+  }
+  .loc-visual .loc-caption{
+    position:absolute; left:14px; bottom:14px;
+    background:rgba(10,31,61,.88);
+    color:var(--teal-300);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem; letter-spacing:.04em;
+    padding:8px 14px; border-radius:999px;
+    pointer-events:none;
+    border:1px solid rgba(143,232,218,.28);
+  }
+
+  /* ---------- Partners / Organization ---------- */
+  .partners{background:var(--paper);}
+  .partners-subhead{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:600;
+    color:var(--navy-900);
+    margin:8px 0 18px;
+  }
+  .partners-subhead:not(:first-of-type){margin-top:44px;}
+  .partners-subhead::before{content:""; width:20px; height:2px; background:var(--teal-500); display:inline-block;}
+  .partner-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+    gap:16px;
+  }
+  .partner-card{
+    border:1.5px dashed rgba(14,26,43,.28);
+    border-radius:var(--radius-md);
+    padding:20px;
+    background:#fff;
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    transition:border-color .3s ease, transform .3s var(--ease);
+  }
+  .partner-card:hover{border-color:var(--teal-500); transform:translateY(-4px);}
+  .partner-logo{
+    width:100%; aspect-ratio:16/9;
+    border:1.5px dashed rgba(14,26,43,.22);
+    border-radius:10px;
+    background:var(--paper-dim);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--mist); font-size:1.5rem;
+  }
+  .partner-name{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.76rem; color:var(--mist); text-align:center; letter-spacing:.02em;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .cta-final{
+    background:linear-gradient(135deg, var(--teal-500), var(--navy-800) 75%);
+    color:#fff; text-align:center;
+  }
+  .cta-final h2{font-size:clamp(1.9rem,3.6vw,2.8rem); max-width:20ch; margin:0 auto;}
+  .cta-final p{max-width:48ch; margin:16px auto 0; color:rgba(255,255,255,.85); font-size:1.02rem; line-height:1.6;}
+  .cta-final .actions{display:flex; justify-content:center; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .cta-final .btn-ghost{border-color:rgba(255,255,255,.55);}
+  .cta-final .btn-primary{background:#fff; color:var(--navy-900); box-shadow:0 14px 30px -12px rgba(0,0,0,.35);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-950); color:#9db0c8; padding:52px 0 34px;}
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;
+    padding-bottom:32px; border-bottom:1px solid var(--line-inv);
+  }
+  footer .brand{color:#eef4fa;}
+  .footer-slogan{max-width:34ch; font-size:.88rem; line-height:1.6; color:var(--teal-300); font-style:normal;}
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding-top:22px; font-size:.78rem;
+  }
+
+  /* Reveal on scroll */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark"><i class="ti ti-flask-2"></i></span>
+      <span>III Encontro de<br>Farmacologia<small>Curso de Farmácia · Estácio</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+      <i class="ti ti-menu-2"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#pilares">Pilares</a></li>
+      <li><a href="#programacao">Programação</a></li>
+      <li><a href="#local">Local</a></li>
+      <li><a href="#organizacao">Realização</a></li>
+      <li><a href="#inscricao">Inscrição</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm btn-sm-desktop" href="https://docs.google.com/forms/d/e/1FAIpQLSdt_-og68ZZDg-GPwYE4aiaw6RpATFLvmv47gWgEux83NCnew/viewform" target="_blank" rel="noopener">Inscreva-se</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-net" id="heroNet" viewBox="0 0 1180 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> 22 – 25 de Setembro de 2026 · Juazeiro do Norte – CE</span>
+        <h1>III Encontro de <em>Farmacologia</em></h1>
+        <p class="subtitle">Ciência, Inovação e Prática Farmacêutica em Diferentes Cenários de Atuação.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdt_-og68ZZDg-GPwYE4aiaw6RpATFLvmv47gWgEux83NCnew/viewform" target="_blank" rel="noopener">
+            <i class="ti ti-clipboard-text"></i> Inscreva-se
+          </a>
+          <a class="btn btn-ghost" href="#programacao">
+            <i class="ti ti-calendar-event"></i> Ver programação
+          </a>
+        </div>
+        <p class="slogan">"Conhecimento que transforma.<br>Ciência que cuida. Farmácia que faz a diferença."</p>
+      </div>
+
+      <div class="label-card">
+        <div class="label-head">
+          <span>Ficha do evento</span>
+          <b>Nº III</b>
+        </div>
+        <div class="label-row">
+          <i class="ti ti-calendar"></i>
+          <div>
+            <div class="k">Data</div>
+            <div class="v">22 a 25 de setembro de 2026</div>
+          </div>
+        </div>
+        <div class="label-row">
+          <i class="ti ti-map-pin"></i>
+          <div>
+            <div class="k">Local</div>
+            <div class="v">Estácio — Campus Cidade Universitária, Juazeiro do Norte – CE</div>
+          </div>
+        </div>
+        <div class="label-row">
+          <i class="ti ti-users-group"></i>
+          <div>
+            <div class="k">Organização</div>
+            <div class="v">Curso de Farmácia – Estácio</div>
+          </div>
+        </div>
+        <div class="lot">
+          <span>4 dias de evento</span>
+          <span>Vagas limitadas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars" id="pilares">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Pilares do evento</span>
+        <h2>Quatro eixos guiam cada atividade</h2>
+        <p>Da base teórica à homenagem aos profissionais, toda a programação foi construída em torno destes pilares.</p>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-icon"><i class="ti ti-atom-2"></i></div>
+          <h3>Ciência</h3>
+          <p>Base teórica sólida para uma prática farmacêutica segura e atualizada.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon"><i class="ti ti-bulb"></i></div>
+          <h3>Inovação</h3>
+          <p>Novas técnicas, tecnologias e abordagens que transformam a profissão.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon"><i class="ti ti-stethoscope"></i></div>
+          <h3>Prática</h3>
+          <p>Vivência real dos diferentes cenários de atuação do farmacêutico.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-icon"><i class="ti ti-heart-handshake"></i></div>
+          <h3>Cuidado</h3>
+          <p>O paciente no centro de cada decisão, do laboratório ao balcão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="program" id="programacao">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Programação oficial</span>
+        <h2>Quatro dias, uma cartela de atividades</h2>
+        <p>Escolha um dia na cartela abaixo para ver os horários, palestras e minicursos.</p>
+      </div>
+
+      <div class="blister" role="tablist" aria-label="Dias do evento">
+        <button class="pill-tab" role="tab" aria-selected="true" aria-controls="dia-22" id="tab-22" data-day="dia-22">
+          <span class="pill-cavity"><span class="pill-capsule"><span class="d">22/09</span><span class="w">Terça</span></span></span>
+        </button>
+        <button class="pill-tab" role="tab" aria-selected="false" aria-controls="dia-23" id="tab-23" data-day="dia-23">
+          <span class="pill-cavity"><span class="pill-capsule"><span class="d">23/09</span><span class="w">Quarta</span></span></span>
+        </button>
+        <button class="pill-tab" role="tab" aria-selected="false" aria-controls="dia-24" id="tab-24" data-day="dia-24">
+          <span class="pill-cavity"><span class="pill-capsule"><span class="d">24/09</span><span class="w">Quinta</span></span></span>
+        </button>
+        <button class="pill-tab" role="tab" aria-selected="false" aria-controls="dia-25" id="tab-25" data-day="dia-25">
+          <span class="pill-cavity"><span class="pill-capsule"><span class="d">25/09</span><span class="w">Sexta</span></span></span>
+        </button>
+      </div>
+
+      <!-- DIA 22 -->
+      <div class="day-panel active" id="dia-22" role="tabpanel" aria-labelledby="tab-22">
+        <div class="day-heading">
+          <span class="num">22/09</span>
+          <h3>Terça-feira</h3>
+          <span class="tag">Abertura e palestras</span>
+        </div>
+        <ul class="agenda">
+          <li class="agenda-item">
+            <div class="agenda-time">18h30<span>Início</span></div>
+            <div class="agenda-body">
+              <h4>Abertura e Credenciamento</h4>
+              <p>Recepção e cadastro dos participantes.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">19h00<span>Palestra</span></div>
+            <div class="agenda-body">
+              <h4>1ª Palestra — "Do Diploma à Profissão: Quais são os Direitos do Farmacêutico?"</h4>
+              <p>Um guia para quem está entrando no mercado de trabalho.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">20h00<span>Intervalo</span></div>
+            <div class="agenda-body">
+              <h4>Coffee Break</h4>
+              <p>Pausa para networking entre os participantes.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">20h20<span>Palestra</span></div>
+            <div class="agenda-body">
+              <h4>2ª Palestra — "Componentes da Assistência Farmacêutica no SUS"</h4>
+              <p>Componentes Básico, Estratégico e Especializado.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">21h20<span>Fim do dia</span></div>
+            <div class="agenda-body">
+              <h4>Encerramento do dia</h4>
+              <p>Recapitulação dos principais pontos abordados e apresentação da programação dos dias seguintes.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- DIA 23 -->
+      <div class="day-panel" id="dia-23" role="tabpanel" aria-labelledby="tab-23">
+        <div class="day-heading">
+          <span class="num">23/09</span>
+          <h3>Quarta-feira</h3>
+          <span class="tag">Minicursos</span>
+        </div>
+        <ul class="agenda">
+          <li class="agenda-item">
+            <div class="agenda-time">1º<span>Minicurso</span></div>
+            <div class="agenda-body">
+              <h4>MPP: Medicamentos Potencialmente Perigosos</h4>
+              <p>Identificação, armazenamento, manipulação, administração e medidas de segurança relacionadas aos medicamentos potencialmente perigosos.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">2º<span>Minicurso</span></div>
+            <div class="agenda-body">
+              <h4>Injetáveis de Alta Performance: Técnica, Segurança e Excelência</h4>
+              <p>Boas práticas e técnicas de administração de medicamentos injetáveis e segurança do paciente.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- DIA 24 -->
+      <div class="day-panel" id="dia-24" role="tabpanel" aria-labelledby="tab-24">
+        <div class="day-heading">
+          <span class="num">24/09</span>
+          <h3>Quinta-feira</h3>
+          <span class="tag">Minicursos</span>
+        </div>
+        <ul class="agenda">
+          <li class="agenda-item">
+            <div class="agenda-time">1º<span>Minicurso</span></div>
+            <div class="agenda-body">
+              <h4>Laboratório de Análises Clínicas</h4>
+              <p>Atividades práticas e abordagem da atuação do farmacêutico no laboratório de análises clínicas.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">2º<span>Minicurso</span></div>
+            <div class="agenda-body">
+              <h4>Vacinas na Prática: Conhecendo e Interpretando a Caderneta de Vacinação</h4>
+              <p>Calendário vacinal, interpretação da caderneta, atualização do esquema vacinal e atuação do farmacêutico nos serviços de vacinação.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- DIA 25 -->
+      <div class="day-panel" id="dia-25" role="tabpanel" aria-labelledby="tab-25">
+        <div class="day-heading">
+          <span class="num">25/09</span>
+          <h3>Sexta-feira</h3>
+          <span class="tag">Encerramento</span>
+        </div>
+        <ul class="agenda">
+          <li class="agenda-item">
+            <div class="agenda-time">1º<span>Momento</span></div>
+            <div class="agenda-body">
+              <h4>Farmacêutico na Estética: Como Construir uma Carreira de Sucesso</h4>
+              <p>Oportunidades profissionais, mercado de trabalho e possibilidades de atuação do farmacêutico na área da estética.</p>
+              <span class="duration">Duração: 30 minutos</span>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">2º<span>Momento</span></div>
+            <div class="agenda-body">
+              <h4>Farmacêutico na Pesquisa: Descobrindo, Desenvolvendo e Transformando</h4>
+              <p>Importância da pesquisa científica na formação e atuação profissional do farmacêutico.</p>
+            </div>
+          </li>
+          <li class="agenda-item">
+            <div class="agenda-time">3º<span>Momento</span></div>
+            <div class="agenda-body">
+              <h4>Homenagens</h4>
+              <p>Reconhecimento e valorização dos profissionais, professores, alunos e colaboradores que contribuem para a formação e valorização da profissão farmacêutica.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="local">
+    <div class="wrap loc-grid">
+      <div class="reveal">
+        <span class="kicker">Local</span>
+        <h2 style="font-size:clamp(1.9rem,3.4vw,2.5rem); margin-bottom:24px;">Onde acontece o encontro</h2>
+        <div class="loc-card">
+          <div class="li">
+            <i class="ti ti-building-community"></i>
+            <div>
+              <div class="k">Instituição</div>
+              <div class="v">Estácio — Campus Cidade Universitária</div>
+            </div>
+          </div>
+          <div class="li">
+            <i class="ti ti-map-pin"></i>
+            <div>
+              <div class="k">Cidade</div>
+              <div class="v">Juazeiro do Norte – CE</div>
+            </div>
+          </div>
+          <div class="li">
+            <i class="ti ti-school"></i>
+            <div>
+              <div class="k">Organização</div>
+              <div class="v">Curso de Farmácia – Estácio</div>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary" style="margin-top:24px;" href="https://www.google.com/maps/search/?api=1&amp;query=Est%C3%A1cio%20Campus%20Cidade%20Universit%C3%A1ria%20Juazeiro%20do%20Norte%20CE" target="_blank" rel="noopener">
+          <i class="ti ti-map-2"></i> Ver no mapa
+        </a>
+      </div>
+      <div class="loc-visual reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d814.2645161626144!2d-39.304845046722996!3d-7.247216650540735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a17865feacb2cb%3A0x3548c79b9f5c61b4!2sEst%C3%A1cio%20Juazeiro%20do%20Norte!5e1!3m2!1spt-BR!2sbr!4v1787316126186!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa — Estácio Campus Cidade Universitária, Juazeiro do Norte"></iframe>
+        <span class="loc-caption"><i class="ti ti-map-pin"></i> Estácio — Cidade Universitária</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS / ORGANIZATION (placeholders — editar depois) -->
+  <section class="partners" id="organizacao">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Realização &amp; apoio</span>
+        <h2>Organização e Patrocinadores</h2>
+        <p>Espaço reservado para as marcas e instituições parceiras do evento. Lista em atualização.</p>
+      </div>
+      <h3 class="partners-subhead">Patrocinadores</h3>
+      <div class="partner-grid">
+
+        <!-- ===== MODELO DE CARTÃO — PATROCINADOR =====
+             Mesma lógica do cartão de organização acima: troque o nome,
+             troque o ícone pela logo (via <img>) e copie o bloco para
+             adicionar mais patrocinadores. -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <i class="ti ti-photo"></i>
+            <!-- <img src="caminho-da-logo.png" alt="Nome do patrocinador" style="width:100%;height:100%;object-fit:contain;padding:10px;"> -->
+          </div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+        <!-- ===== FIM DO MODELO ===== -->
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome do patrocinador</span>
+        </div>
+
+      </div>
+
+      <h3 class="partners-subhead">Organização</h3>
+      <div class="partner-grid">
+
+        <!-- ===== MODELO DE CARTÃO — ORGANIZAÇÃO =====
+             1) Troque "Nome da organização" pelo nome real.
+             2) Para usar uma logo, apague a linha do <i class="ti ti-photo"></i>
+                e descomente a linha do <img>, ajustando "caminho-da-logo.png".
+             3) Para adicionar mais organizadores, copie este bloco inteiro
+                (do <div class="partner-card"> até o </div> correspondente)
+                e cole quantas vezes precisar dentro do mesmo .partner-grid. -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <i class="ti ti-photo"></i>
+            <!-- <img src="caminho-da-logo.png" alt="Nome da organização" style="width:100%;height:100%;object-fit:contain;padding:10px;"> -->
+          </div>
+          <span class="partner-name">Nome da organização</span>
+        </div>
+        <!-- ===== FIM DO MODELO ===== -->
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome da organização</span>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-logo"><i class="ti ti-photo"></i></div>
+          <span class="partner-name">Nome da organização</span>
+        </div>
+
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final" id="inscricao">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Garanta sua vaga no III Encontro de Farmacologia</h2>
+        <p>Quatro dias de palestras, minicursos e homenagens dedicados à ciência, inovação e prática farmacêutica.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdt_-og68ZZDg-GPwYE4aiaw6RpATFLvmv47gWgEux83NCnew/viewform" target="_blank" rel="noopener">
+            <i class="ti ti-clipboard-text"></i> Inscreva-se agora
+          </a>
+          <a class="btn btn-ghost" href="#programacao">
+            <i class="ti ti-list-details"></i> Revisar programação
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="brand">
+          <span class="brand-mark"><i class="ti ti-flask-2"></i></span>
+          <span>III Encontro de<br>Farmacologia</span>
+        </a>
+      </div>
+      <p class="footer-slogan">Conhecimento que transforma. Ciência que cuida. Farmácia que faz a diferença.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>Curso de Farmácia – Estácio · Campus Cidade Universitária, Juazeiro do Norte – CE</span>
+      <span>22 a 25 de setembro de 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Blister-pack day tabs
+  const tabs = document.querySelectorAll('.pill-tab');
+  const panels = document.querySelectorAll('.day-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(tab.dataset.day).classList.add('active');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .pillar-card');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => { el.classList.add('reveal'); io.observe(el); });
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Hero molecule network
+  (function buildNet(){
+    const svg = document.getElementById('heroNet');
+    const W = 1180, H = 640;
+    const count = 22;
+    const pts = [];
+    for (let i = 0; i < count; i++) {
+      pts.push({ x: Math.random()*W, y: Math.random()*H*0.85 });
+    }
+    const ns = 'http://www.w3.org/2000/svg';
+    // connect nearby points
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i+1; j < pts.length; j++) {
+        const dx = pts[i].x-pts[j].x, dy = pts[i].y-pts[j].y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if (dist < 190) {
+          const line = document.createElementNS(ns, 'line');
+          line.setAttribute('x1', pts[i].x); line.setAttribute('y1', pts[i].y);
+          line.setAttribute('x2', pts[j].x); line.setAttribute('y2', pts[j].y);
+          svg.appendChild(line);
+        }
+      }
+    }
+    pts.forEach((p, i) => {
+      const c = document.createElementNS(ns, 'circle');
+      c.setAttribute('cx', p.x); c.setAttribute('cy', p.y);
+      c.setAttribute('r', 2.4 + Math.random()*1.4);
+      if (i % 4 === 0) {
+        c.classList.add('pulse');
+        c.style.animationDelay = (Math.random()*4) + 's';
+      }
+      svg.appendChild(c);
+    });
+  })();
+</script>
+
+</body>
+</html>
