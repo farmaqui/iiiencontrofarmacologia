@@ -448,11 +448,55 @@
     display:inline-block; margin-top:8px;
     font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--amber-400);
   }
+  .agenda-body .speaker{
+    display:flex; align-items:center; gap:7px;
+    margin-top:10px;
+    font-size:.82rem; font-weight:600; color:var(--teal-300);
+  }
+  .agenda-body .speaker i{font-size:.95rem; color:var(--teal-400);}
 
   @media (max-width:600px){
     .agenda-item{grid-template-columns:1fr;}
     .agenda-time{display:flex; align-items:baseline; gap:8px;}
   }
+
+  /* ---------- Speakers ---------- */
+  .speakers{background:var(--navy-950); color:#eef4fa; position:relative;}
+  .speakers .section-head p{color:#a9bbd1;}
+  .speakers .kicker{color:var(--teal-300);}
+  .speakers .kicker::before{background:var(--teal-300);}
+  .speaker-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(190px,1fr));
+    gap:20px;
+  }
+  .speaker-card{
+    border:1.5px dashed rgba(255,255,255,.22);
+    border-radius:var(--radius-md);
+    padding:18px;
+    background:rgba(255,255,255,.03);
+    display:flex; flex-direction:column; gap:14px;
+    transition:border-color .3s ease, transform .3s var(--ease), background .3s ease;
+  }
+  .speaker-card:hover{border-color:var(--teal-400); transform:translateY(-4px); background:rgba(255,255,255,.05);}
+  .speaker-photo{
+    width:100%;
+    aspect-ratio:3/4;
+    border-radius:12px;
+    border:1.5px dashed rgba(255,255,255,.28);
+    background:rgba(255,255,255,.04);
+    display:flex; align-items:center; justify-content:center;
+    color:#7f93ac; font-size:1.8rem;
+    overflow:hidden;
+  }
+  .speaker-photo img{width:100%; height:100%; object-fit:cover; border-radius:10px;}
+  .speaker-tag{
+    align-self:flex-start;
+    font-family:'JetBrains Mono',monospace; font-size:.64rem; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--navy-950); background:var(--teal-300); padding:4px 10px; border-radius:999px;
+  }
+  .speaker-name{font-family:'Space Grotesk',sans-serif; font-size:1.02rem; font-weight:600; line-height:1.25;}
+  .speaker-role{font-size:.82rem; color:#a9bbd1; line-height:1.55;}
 
   /* ---------- Location ---------- */
   .location{background:var(--paper);}
@@ -579,6 +623,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#pilares">Pilares</a></li>
       <li><a href="#programacao">Programação</a></li>
+      <li><a href="#palestrantes">Palestrantes</a></li>
       <li><a href="#local">Local</a></li>
       <li><a href="#organizacao">Realização</a></li>
       <li><a href="#inscricao">Inscrição</a></li>
@@ -720,6 +765,7 @@
             <div class="agenda-body">
               <h4>1ª Palestra — "Do Diploma à Profissão: Quais são os Direitos do Farmacêutico?"</h4>
               <p>Um guia para quem está entrando no mercado de trabalho.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Dr. Ícaro Macedo Feitosa</span>
             </div>
           </li>
           <li class="agenda-item">
@@ -734,6 +780,7 @@
             <div class="agenda-body">
               <h4>2ª Palestra — "Componentes da Assistência Farmacêutica no SUS"</h4>
               <p>Componentes Básico, Estratégico e Especializado.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Silvano de Carvalho</span>
             </div>
           </li>
           <li class="agenda-item">
@@ -759,6 +806,7 @@
             <div class="agenda-body">
               <h4>MPP: Medicamentos Potencialmente Perigosos</h4>
               <p>Identificação, armazenamento, manipulação, administração e medidas de segurança relacionadas aos medicamentos potencialmente perigosos.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Ítalo Gregório</span>
             </div>
           </li>
           <li class="agenda-item">
@@ -766,6 +814,7 @@
             <div class="agenda-body">
               <h4>Injetáveis de Alta Performance: Técnica, Segurança e Excelência</h4>
               <p>Boas práticas e técnicas de administração de medicamentos injetáveis e segurança do paciente.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Jamilly Feitosa Torres</span>
             </div>
           </li>
         </ul>
@@ -784,6 +833,7 @@
             <div class="agenda-body">
               <h4>Laboratório de Análises Clínicas</h4>
               <p>Atividades práticas e abordagem da atuação do farmacêutico no laboratório de análises clínicas.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Felllipe Brito</span>
             </div>
           </li>
           <li class="agenda-item">
@@ -791,6 +841,7 @@
             <div class="agenda-body">
               <h4>Vacinas na Prática: Conhecendo e Interpretando a Caderneta de Vacinação</h4>
               <p>Calendário vacinal, interpretação da caderneta, atualização do esquema vacinal e atuação do farmacêutico nos serviços de vacinação.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Jamilly Feitosa Torres</span>
             </div>
           </li>
         </ul>
@@ -809,6 +860,7 @@
             <div class="agenda-body">
               <h4>Farmacêutico na Estética: Como Construir uma Carreira de Sucesso</h4>
               <p>Oportunidades profissionais, mercado de trabalho e possibilidades de atuação do farmacêutico na área da estética.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Dra. Fernanda Rocha</span>
               <span class="duration">Duração: 30 minutos</span>
             </div>
           </li>
@@ -817,6 +869,7 @@
             <div class="agenda-body">
               <h4>Farmacêutico na Pesquisa: Descobrindo, Desenvolvendo e Transformando</h4>
               <p>Importância da pesquisa científica na formação e atuação profissional do farmacêutico.</p>
+              <span class="speaker"><i class="ti ti-user"></i> Dr. Irineu Neto</span>
             </div>
           </li>
           <li class="agenda-item">
@@ -827,6 +880,98 @@
             </div>
           </li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section class="speakers" id="palestrantes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Quem vai estar lá</span>
+        <h2>Palestrantes e Facilitadores</h2>
+        <p>Espaço reservado para a foto 3x4 de cada convidado. Lista em atualização.</p>
+      </div>
+      <div class="speaker-grid">
+
+        <!-- ===== MODELO DE CARTÃO — PALESTRANTE =====
+             1) Troque nome, tag (dia/atividade) e biografia pelo texto real.
+             2) Para adicionar a foto 3x4, apague a linha do <i class="ti ti-user"></i>
+                e descomente a linha do <img>, ajustando "foto-nome.jpg".
+             3) Para adicionar mais pessoas, copie este bloco inteiro
+                (do <div class="speaker-card"> até o </div> correspondente)
+                e cole quantas vezes precisar dentro do mesmo .speaker-grid. -->
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-icaro-feitosa.jpg" alt="Dr. Ícaro Macedo Feitosa"> -->
+          </div>
+          <span class="speaker-tag">22/09 · 1ª Palestra</span>
+          <span class="speaker-name">Dr. Ícaro Macedo Feitosa</span>
+          <p class="speaker-role">Advogado, professor universitário e coordenador do curso de Direito da Estácio Campus Juazeiro do Norte/CE.</p>
+        </div>
+        <!-- ===== FIM DO MODELO ===== -->
+
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-silvano-carvalho.jpg" alt="Silvano de Carvalho"> -->
+          </div>
+          <span class="speaker-tag">22/09 · 2ª Palestra</span>
+          <span class="speaker-name">Silvano de Carvalho</span>
+          <p class="speaker-role">Farmacêutico, Coordenador de Assistência Farmacêutica da Superintendência Regional de Saúde – Cariri. Pós-graduado em Gestão em Sistemas de Saúde pela Escola de Saúde Pública do Ceará; pós-graduando em Farmácia Clínica pela URCA.</p>
+        </div>
+
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-italo-gregorio.jpg" alt="Ítalo Gregório"> -->
+          </div>
+          <span class="speaker-tag">23/09 · 1º Minicurso</span>
+          <span class="speaker-name">Ítalo Gregório</span>
+          <p class="speaker-role">Farmacêutico, Coordenador da farmácia do Hospital do Unimed.</p>
+        </div>
+
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-jamilly-torres.jpg" alt="Jamilly Feitosa Torres"> -->
+          </div>
+          <span class="speaker-tag">23/09 e 24/09 · 2º Minicurso</span>
+          <span class="speaker-name">Jamilly Feitosa Torres</span>
+          <p class="speaker-role">Farmacêutica, Especialista em Farmácia Clínica.</p>
+        </div>
+
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-felllipe-brito.jpg" alt="Felllipe Brito"> -->
+          </div>
+          <span class="speaker-tag">24/09 · 1º Minicurso</span>
+          <span class="speaker-name">Felllipe Brito</span>
+          <p class="speaker-role">Farmacêutico, pós-graduado em Farmácia Clínica e Hospitalar pelo ICTQ e em Docência do Ensino Superior pela Estácio FMJ. Analista da qualidade no laboratório LAMIC desde janeiro de 2026.</p>
+        </div>
+
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-fernanda-rocha.jpg" alt="Dra. Fernanda Rocha"> -->
+          </div>
+          <span class="speaker-tag">25/09 · 1º Momento</span>
+          <span class="speaker-name">Dra. Fernanda Rocha</span>
+          <p class="speaker-role">Farmacêutica Estética.</p>
+        </div>
+
+        <div class="speaker-card reveal">
+          <div class="speaker-photo">
+            <i class="ti ti-user"></i>
+            <!-- <img src="foto-irineu-neto.jpg" alt="Dr. Irineu Neto"> -->
+          </div>
+          <span class="speaker-tag">25/09 · 2º Momento</span>
+          <span class="speaker-name">Dr. Irineu Neto</span>
+          <p class="speaker-role">Farmacêutico, pós-graduado em Farmácia Clínica e Hospitalar, Saúde Pública, Farmacologia e Vigilância e Cuidado em Saúde no Enfrentamento da COVID-19 e outras Doenças Virais. Residência em Saúde da Família e Comunidade e em Saúde Coletiva. Mestrando em Ciências da Saúde. Autor de mais de 80 manuscritos publicados e revisor de periódicos.</p>
+        </div>
+
       </div>
     </div>
   </section>
