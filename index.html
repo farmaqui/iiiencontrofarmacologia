@@ -532,15 +532,16 @@
 
   /* Shared circular icon-link, used by speaker socials and footer socials */
   .icon-link{
+    /*display:flex;*/
     width:32px; height:32px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
+    display:none; align-items:center; justify-content:center;
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.18);
     color:#c6d5e6; font-size:.95rem;
     text-decoration:none;
     transition:background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
   }
-  .icon-link: display: none; hover{background:var(--teal-500); color:#05221c; border-color:var(--teal-500); transform:translateY(-2px);}
+  .icon-link: hover{background:var(--teal-500); color:#05221c; border-color:var(--teal-500); transform:translateY(-2px);}
   .speaker-socials{
     display:flex; flex-wrap:wrap; gap:8px;
     margin-top:auto; padding-top:4px;
@@ -960,7 +961,7 @@
       <div class="section-head reveal">
         <span class="kicker">Quem vai estar lá</span>
         <h2>Palestrantes e Facilitadores</h2>
-        <p>Espaço reservado para a foto 3x4 de cada convidado. Lista em atualização.</p>
+        <p>Conheça nossos convidados!.</p>
       </div>
       <div class="speaker-grid">
 
