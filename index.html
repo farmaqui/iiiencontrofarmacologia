@@ -130,7 +130,7 @@
     text-decoration:none;
   }
   .brand-mark{
-    width:34px; height:34px; border-radius:10px;
+    width:34px; height:34px; border-radius:50%;
     background:linear-gradient(135deg, var(--teal-400), var(--navy-700));
     display:flex; align-items:center; justify-content:center;
     color:#fff; font-size:1.05rem; flex:none;
@@ -139,7 +139,7 @@
   .brand-mark img.logo-img{
     width:100%; height:100%;
     object-fit:cover;
-    border-radius:10px;
+    border-radius:50%;
     display:block;
   }
   .brand small{display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:.68rem; color:var(--teal-300); text-transform:uppercase; letter-spacing:.08em;}
@@ -295,6 +295,38 @@
     display:flex; justify-content:space-between; align-items:center;
     font-family:'JetBrains Mono',monospace; font-size:.66rem; color:var(--mist); text-transform:uppercase; letter-spacing:.08em;
   }
+  .label-price{
+    display:flex; gap:10px;
+    margin-top:16px; padding-top:14px;
+    border-top:1px dashed var(--line);
+  }
+  .price-chip{
+    flex:1;
+    background:var(--paper-dim);
+    border-radius:10px;
+    padding:10px 12px;
+    text-align:center;
+  }
+  .price-audience{
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.6rem; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--mist);
+  }
+  .price-value{
+    display:block;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700; font-size:1.05rem;
+    color:var(--navy-900);
+    margin-top:2px;
+  }
+  .label-deadline{
+    margin-top:12px;
+    display:flex; align-items:center; gap:6px;
+    font-size:.76rem; font-weight:600;
+    color:var(--teal-500);
+  }
+  .label-deadline i{font-size:.95rem;}
 
   /* ---------- Section shell ---------- */
   section{padding:96px 0;}
@@ -498,6 +530,22 @@
   .speaker-name{font-family:'Space Grotesk',sans-serif; font-size:1.02rem; font-weight:600; line-height:1.25;}
   .speaker-role{font-size:.82rem; color:#a9bbd1; line-height:1.55;}
 
+  /* Shared circular icon-link, used by speaker socials and footer socials */
+  .icon-link{
+    width:32px; height:32px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    color:#c6d5e6; font-size:.95rem;
+    text-decoration:none;
+    transition:background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
+  }
+  .icon-link: display:none; hover{background:var(--teal-500); color:#05221c; border-color:var(--teal-500); transform:translateY(-2px);}
+  .speaker-socials{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-top:auto; padding-top:4px;
+  }
+
   /* ---------- Location ---------- */
   .location{background:var(--paper);}
   .loc-grid{
@@ -562,6 +610,8 @@
     background:#fff;
     display:flex; flex-direction:column; align-items:center; gap:12px;
     transition:border-color .3s ease, transform .3s var(--ease);
+    text-decoration:none;
+    cursor:pointer;
   }
   .partner-card:hover{border-color:var(--teal-500); transform:translateY(-4px);}
   .partner-logo{
@@ -587,6 +637,14 @@
   .cta-final .actions{display:flex; justify-content:center; gap:14px; margin-top:34px; flex-wrap:wrap;}
   .cta-final .btn-ghost{border-color:rgba(255,255,255,.55);}
   .cta-final .btn-primary{background:#fff; color:var(--navy-900); box-shadow:0 14px 30px -12px rgba(0,0,0,.35);}
+  .cta-final .cta-info{
+    margin-top:24px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.78rem;
+    color:rgba(255,255,255,.85);
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    flex-wrap:wrap;
+  }
 
   /* ---------- Footer ---------- */
   footer{background:var(--navy-950); color:#9db0c8; padding:52px 0 34px;}
@@ -596,6 +654,7 @@
   }
   footer .brand{color:#eef4fa;}
   .footer-slogan{max-width:34ch; font-size:.88rem; line-height:1.6; color:var(--teal-300); font-style:normal;}
+  .footer-socials{display:flex; gap:10px; margin-top:16px;}
   .footer-bottom{
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
     padding-top:22px; font-size:.78rem;
@@ -680,6 +739,17 @@
             <div class="v">Curso de Farmácia – Estácio</div>
           </div>
         </div>
+        <div class="label-price">
+          <div class="price-chip">
+            <span class="price-audience">Aluno Estácio</span>
+            <span class="price-value">R$ 40,00</span>
+          </div>
+          <div class="price-chip">
+            <span class="price-audience">Externo</span>
+            <span class="price-value">R$ 60,00</span>
+          </div>
+        </div>
+        <div class="label-deadline"><i class="ti ti-calendar-due"></i> Inscrições até 22/09/2026</div>
         <div class="lot">
           <span>4 dias de evento</span>
           <span>Vagas limitadas</span>
@@ -908,6 +978,18 @@
           <span class="speaker-tag">22/09 · 1ª Palestra</span>
           <span class="speaker-name">Dr. Ícaro Macedo Feitosa</span>
           <p class="speaker-role">Advogado, professor universitário e coordenador do curso de Direito da Estácio Campus Juazeiro do Norte/CE.</p>
+          <!-- ===== REDES SOCIAIS =====
+               Troque cada href="#" pelo link real. Apague as linhas
+               das redes que essa pessoa não tiver. -->
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
+          <!-- ===== FIM DAS REDES SOCIAIS ===== -->
         </div>
         <!-- ===== FIM DO MODELO ===== -->
 
@@ -918,6 +1000,14 @@
           <span class="speaker-tag">22/09 · 2ª Palestra</span>
           <span class="speaker-name">Silvano de Carvalho</span>
           <p class="speaker-role">Farmacêutico, Coordenador de Assistência Farmacêutica da Superintendência Regional de Saúde – Cariri. Pós-graduado em Gestão em Sistemas de Saúde pela Escola de Saúde Pública do Ceará; pós-graduando em Farmácia Clínica pela URCA.</p>
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
         </div>
 
         <div class="speaker-card reveal">
@@ -927,6 +1017,14 @@
           <span class="speaker-tag">23/09 · 1º Minicurso</span>
           <span class="speaker-name">Ítalo Gregório</span>
           <p class="speaker-role">Farmacêutico, Coordenador da farmácia do Hospital do Unimed.</p>
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
         </div>
 
         <div class="speaker-card reveal">
@@ -936,6 +1034,14 @@
           <span class="speaker-tag">23/09 e 24/09 · 2º Minicurso</span>
           <span class="speaker-name">Jamilly Feitosa Torres</span>
           <p class="speaker-role">Farmacêutica, Especialista em Farmácia Clínica.</p>
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
         </div>
 
         <div class="speaker-card reveal">
@@ -945,6 +1051,14 @@
           <span class="speaker-tag">24/09 · 1º Minicurso</span>
           <span class="speaker-name">Felllipe Brito</span>
           <p class="speaker-role">Farmacêutico, pós-graduado em Farmácia Clínica e Hospitalar pelo ICTQ e em Docência do Ensino Superior pela Estácio FMJ. Analista da qualidade no laboratório LAMIC desde janeiro de 2026.</p>
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
         </div>
 
         <div class="speaker-card reveal">
@@ -954,6 +1068,14 @@
           <span class="speaker-tag">25/09 · 1º Momento</span>
           <span class="speaker-name">Dra. Fernanda Rocha</span>
           <p class="speaker-role">Farmacêutica Estética.</p>
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
         </div>
 
         <div class="speaker-card reveal">
@@ -963,6 +1085,14 @@
           <span class="speaker-tag">25/09 · 2º Momento</span>
           <span class="speaker-name">Dr. Irineu Neto</span>
           <p class="speaker-role">Farmacêutico, pós-graduado em Farmácia Clínica e Hospitalar, Saúde Pública, Farmacologia e Vigilância e Cuidado em Saúde no Enfrentamento da COVID-19 e outras Doenças Virais. Residência em Saúde da Família e Comunidade e em Saúde Coletiva. Mestrando em Ciências da Saúde. Autor de mais de 80 manuscritos publicados e revisor de periódicos.</p>
+          <div class="speaker-socials">
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+            <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          </div>
         </div>
 
       </div>
@@ -1015,69 +1145,72 @@
       <div class="section-head reveal">
         <span class="kicker">Realização &amp; apoio</span>
         <h2>Organização<!-- e Patrocinadores --></h2>
-        <p>Espaço reservado para as marcas e instituições parceiras do evento. Lista em atualização.</p>
+        <p>Espaço reservado para as marcas e instituições parceiras do evento.</p>
       </div>
-      <h3 style="display: none;" class="partners-subhead">Patrocinadores</h3>
+      <!-- <h3 class="partners-subhead">Patrocinadores</h3> -->
       <!-- Retire o style="display: none;" para mostrar os patrocinadores -->
-      <div style="display: none;" class="partner-grid">
+      <!-- <div class="partner-grid"> -->
 
         <!-- ===== MODELO DE CARTÃO — PATROCINADOR =====
              1) Troque "Nome do patrocinador" pelo nome real.
              2) Para usar uma logo, apague a linha do <i class="ti ti-photo"></i>
                 e descomente a linha do <img>, ajustando "caminho-da-logo.png".
-             3) Para adicionar mais patrocinadores, copie este bloco inteiro
-                (do <div class="partner-card"> até o </div> correspondente)
+             3) Para linkar o cartão (logo + nome), troque href="#" pela URL
+                real (site, Instagram, etc.) do patrocinador. Se ainda não
+                tiver o link, pode deixar href="#" por enquanto.
+             4) Para adicionar mais patrocinadores, copie este bloco inteiro
+                (do <a class="partner-card"> até o </a> correspondente)
                 e cole quantas vezes precisar dentro do mesmo .partner-grid. -->
-        <div style="display: none;" class="partner-card">
+        <!-- <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo">
-            <i class="ti ti-photo"></i>
+            <i class="ti ti-photo"></i> -->
             <!-- <img src="caminho-da-logo.png" alt="Nome do patrocinador" style="width:100%;height:100%;object-fit:contain;padding:10px;"> -->
-          </div>
+          <!-- </div>
           <span class="partner-name">Nome do patrocinador</span>
-        </div>
+        </a> -->
         <!-- ===== FIM DO MODELO ===== -->
 
-        <div style="display: none;" class="partner-card">
+        <!-- <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome do patrocinador</span>
-        </div>
+        </a>
 
-        <div style="display: none;" class="partner-card">
+        <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome do patrocinador</span>
-        </div>
+        </a>
 
-        <div style="display: none;" class="partner-card">
+        <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome do patrocinador</span>
-        </div>
+        </a>
 
-      </div>
+      </div> 
 
       <h3 style="display: none;" class="partners-subhead">Organização</h3>
-      <div class="partner-grid">
+      <div class="partner-grid"> -->
 
         <!-- ===== MODELO DE CARTÃO — ORGANIZAÇÃO =====
              Mesma lógica do cartão de patrocinador acima: troque o nome,
-             troque o ícone pela logo (via <img>) e copie o bloco para
-             adicionar mais organizadores. -->
-        <div class="partner-card">
+             troque o ícone pela logo (via <img>), troque href="#" pelo
+             link real e copie o bloco para adicionar mais organizadores. -->
+        <a href="https://www.instagram.com/farmaestacio_juazeirodonorte/" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo">
             <img src="logoestacio.png" alt="Nome da organização" style="width:100%;height:100%;object-fit:contain;padding:10px;">
           </div>
           <span class="partner-name">Curso de Farmácia - Estacio FMJ</span>
-        </div>
+        </a>
         <!-- ===== FIM DO MODELO ===== -->
 
-        <div style="display: none;" class="partner-card">
+        <!-- <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome da organização</span>
-        </div>
+        </a>
 
-        <div style="display: none;" class="partner-card">
+        <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome da organização</span>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -1097,6 +1230,9 @@
             <i class="ti ti-list-details"></i> Revisar programação
           </a>
         </div>
+        <div class="cta-info">
+          <i class="ti ti-ticket"></i> Aluno Estácio: R$ 40,00 · Externo: R$ 60,00 · Inscrições até 22/09/2026
+        </div>
       </div>
     </div>
   </section>
@@ -1111,15 +1247,18 @@
             <img src="iconiii.png" alt="III Encontro de Farmacologia" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <i class="ti ti-flask-2" style="display:none;"></i>
           </span>
-          <span>Semana do Farmacêutico</span>
-          <span>III Encontro de<br>Farmacologia</span>
+          <span>Semana do<br>Farmacêutico</span>
         </a>
+        <div class="footer-socials">
+          <a class="icon-link" href="https://www.instagram.com/farmaestacio_juazeirodonorte/" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+        </div>
       </div>
       <p class="footer-slogan">Conhecimento que transforma. Ciência que cuida. Farmácia que faz a diferença.</p>
     </div>
     <div class="footer-bottom">
       <span>Curso de Farmácia – Estácio · Campus Cidade Universitária, Juazeiro do Norte – CE</span>
       <span>22 a 25 de setembro de 2026</span>
+      <span>Powered by Marcos</span>
     </div>
   </div>
 </footer>
