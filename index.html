@@ -629,7 +629,7 @@
   .partner-logo{
     width:25%; aspect-ratio:16/9;
     border:1.5px solid rgba(14,26,43,.22);
-    border-radius:10px;
+    border-radius:15px;
     background:var(--paper-dim);
     display:flex; align-items:center; justify-content:center;
     color:var(--mist); font-size:1.5rem;
@@ -992,13 +992,6 @@
       </div>
       <div class="speaker-grid">
 
-        <!-- ===== MODELO DE CARTÃO — PALESTRANTE =====
-             1) Troque nome, tag (dia/atividade) e biografia pelo texto real.
-             2) Para adicionar a foto 3x4, apague a linha do <i class="ti ti-user"></i>
-                e descomente a linha do <img>, ajustando "foto-nome.jpg".
-             3) Para adicionar mais pessoas, copie este bloco inteiro
-                (do <div class="speaker-card"> até o </div> correspondente)
-                e cole quantas vezes precisar dentro do mesmo .speaker-grid. -->
         <div class="speaker-card reveal">
           <div class="speaker-photo">
             <img src="icaro.png" alt="Dr. Ícaro Macedo Feitosa">
@@ -1006,10 +999,7 @@
           <span class="speaker-tag">22/09 · 1ª Palestra</span>
           <span class="speaker-name">Dr. Ícaro Macedo Feitosa</span>
           <p class="speaker-role">Advogado, professor universitário e coordenador do curso de Direito da Estácio Campus Juazeiro do Norte/CE.</p>
-          <!-- ===== REDES SOCIAIS =====
-               Troque cada href="#" pelo link real. Apague as linhas
-               das redes que essa pessoa não tiver. -->
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1017,18 +1007,16 @@
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="YouTube"><i class="ti ti-brand-youtube"></i></a>
           </div>
-          <!-- ===== FIM DAS REDES SOCIAIS ===== -->
         </div>
-        <!-- ===== FIM DO MODELO ===== -->
 
         <div class="speaker-card reveal">
           <div class="speaker-photo">
-<img src="silvano.png" alt="Silvano de Carvalho">
+            <img src="silvano.png" alt="Silvano de Carvalho">
           </div>
           <span class="speaker-tag">22/09 · 2ª Palestra</span>
           <span class="speaker-name">Silvano de Carvalho</span>
           <p class="speaker-role">Farmacêutico, Coordenador de Assistência Farmacêutica da Superintendência Regional de Saúde – Cariri. Pós-graduado em Gestão em Sistemas de Saúde pela Escola de Saúde Pública do Ceará; pós-graduando em Farmácia Clínica pela URCA.</p>
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1045,7 +1033,7 @@
           <span class="speaker-tag">23/09 · 1º Minicurso</span>
           <span class="speaker-name">Ítalo Gregório</span>
           <p class="speaker-role">Farmacêutico, Coordenador da farmácia do Hospital do Unimed.</p>
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1062,7 +1050,7 @@
           <span class="speaker-tag">23/09 e 24/09 · 2º Minicurso</span>
           <span class="speaker-name">Jamilly Feitosa Torres</span>
           <p class="speaker-role">Farmacêutica, Especialista em Farmácia Clínica.</p>
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1079,7 +1067,7 @@
           <span class="speaker-tag">24/09 · 1º Minicurso</span>
           <span class="speaker-name">Felllipe Brito</span>
           <p class="speaker-role">Farmacêutico, pós-graduado em Farmácia Clínica e Hospitalar pelo ICTQ e em Docência do Ensino Superior pela Estácio FMJ. Analista da qualidade no laboratório LAMIC desde janeiro de 2026.</p>
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1096,7 +1084,7 @@
           <span class="speaker-tag">25/09 · 1º Momento</span>
           <span class="speaker-name">Dra. Fernanda Rocha</span>
           <p class="speaker-role">Farmacêutica Estética.</p>
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1113,7 +1101,7 @@
           <span class="speaker-tag">25/09 · 2º Momento</span>
           <span class="speaker-name">Dr. Irineu Neto</span>
           <p class="speaker-role">Farmacêutico, pós-graduado em Farmácia Clínica e Hospitalar, Saúde Pública, Farmacologia e Vigilância e Cuidado em Saúde no Enfrentamento da COVID-19 e outras Doenças Virais. Residência em Saúde da Família e Comunidade e em Saúde Coletiva. Mestrando em Ciências da Saúde. Autor de mais de 80 manuscritos publicados e revisor de periódicos.</p>
-          <div class="speaker-socials">
+          <div style="display: none" class="speaker-socials">
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Lattes"><i class="ti ti-file-text"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
             <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
@@ -1181,38 +1169,25 @@
     </div>
   </section>
 
-  <!-- PARTNERS / ORGANIZATION (placeholders — editar depois) -->
+  <!-- PARTNERS / ORGANIZATION -->
   <section class="partners" id="organizacao">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="kicker">Realização &amp; apoio</span>
-        <h2>Organização<!-- e Patrocinadores --></h2>
+        <h2>Organização e Patrocinadores</h2>
         <p>Espaço reservado para as marcas e instituições parceiras do evento. Lista em atualização.</p>
       </div>
-      <h3 style="display: none;" class="partners-subhead">Patrocinadores</h3>
-      <!-- Retire o style="display: none;" para mostrar os patrocinadores -->
-      <div style="display: none;" class="partner-grid">
+      <h3 class="partners-subhead">Patrocinadores</h3>
+      <div class="partner-grid">
 
-        <!-- ===== MODELO DE CARTÃO — PATROCINADOR =====
-             1) Troque "Nome do patrocinador" pelo nome real.
-             2) Para usar uma logo, apague a linha do <i class="ti ti-photo"></i>
-                e descomente a linha do <img>, ajustando "caminho-da-logo.png".
-             3) Para linkar o cartão (logo + nome), troque href="#" pela URL
-                real (site, Instagram, etc.) do patrocinador. Se ainda não
-                tiver o link, pode deixar href="#" por enquanto.
-             4) Para adicionar mais patrocinadores, copie este bloco inteiro
-                (do <a class="partner-card"> até o </a> correspondente)
-                e cole quantas vezes precisar dentro do mesmo .partner-grid. -->
         <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
-          <div class="partner-logo">
-            <i class="ti ti-photo"></i>
-            <!-- <img src="caminho-da-logo.png" alt="Nome do patrocinador" style="width:100%;height:100%;object-fit:contain;padding:10px;"> -->
+          <div class="partner-logo"> 
+            <img src="semprebela.jpg" alt="Semprebela" style="width:100%;height:100%;object-fit:contain;padding:10px;">
           </div>
-          <span class="partner-name">Nome do patrocinador</span>
+          <span class="partner-name">Sempre Bela</span>
         </a>
-        <!-- ===== FIM DO MODELO ===== -->
 
-        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
+       <!--  <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome do patrocinador</span>
         </a>
@@ -1225,34 +1200,54 @@
         <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
           <div class="partner-logo"><i class="ti ti-photo"></i></div>
           <span class="partner-name">Nome do patrocinador</span>
-        </a>
+        </a> -->
 
       </div>
 
       <h3 style="display: none;" class="partners-subhead">Organização</h3>
       <div class="partner-grid">
-
-        <!-- ===== MODELO DE CARTÃO — ORGANIZAÇÃO =====
-             Mesma lógica do cartão de patrocinador acima: troque o nome,
-             troque o ícone pela logo (via <img>), troque href="#" pelo
-             link real e copie o bloco para adicionar mais organizadores. -->
+        
         <a href="#" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo">
             <img src="logoestacio.png" alt="Nome da organização" style="width:100%;height:100%;object-fit:contain;padding:10px;">
           </div>
           <span class="partner-name">Curso de Farmácia - Estacio FMJ</span>
         </a>
-        <!-- ===== FIM DO MODELO ===== -->
 
         <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
-          <div class="partner-logo"><i class="ti ti-photo"></i></div>
-          <span class="partner-name">Nome da organização</span>
+          <div class="partner-logo"><img src="lais.jpg" alt="Dralais" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Dra. Lais</span>
         </a>
 
         <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
-          <div class="partner-logo"><i class="ti ti-photo"></i></div>
-          <span class="partner-name">Nome da organização</span>
+          <div class="partner-logo"><img src="enaide.png" alt="Draenaide" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Dra. Enaide</span>
         </a>
+
+        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
+          <div class="partner-logo"><img src="samuel.png" alt="Prof Samuel" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Prof. Samuel</span>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
+          <div class="partner-logo"><img src="caf.jpg" alt="CAF" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Centro Academico de Farmacia</span>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
+          <div class="partner-logo"><img src="lafarc.jpg" alt="LAFARC" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Liga Academica de Farmacia Clinica</span>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
+          <div class="partner-logo"><img src="atletica.png" alt="Hidra" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Atletica Hidra</span>
+        </a>
+
+        <!-- <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
+          <div class="partner-logo"><img src="logoestacio.png" alt="Nome da organização" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <span class="partner-name">Nome da organização</span>
+        </a> -->
 
       </div>
     </div>
@@ -1295,9 +1290,7 @@
           </span>
           <span>Semana do<br>Farmacêutico</span>
         </a>
-        <!-- ===== REDE SOCIAL DO RODAPÉ =====
-             Troque href="#" pelo link do Instagram do curso de Farmácia
-             da Estácio Juazeiro do Norte quando estiver pronto. -->
+        <!-- ===== REDE SOCIAL DO RODAPÉ ===== -->
         <div class="footer-socials">
           <a class="icon-link" href="#" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
         </div>
