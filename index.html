@@ -612,27 +612,38 @@
   .partners-subhead::before{content:""; width:20px; height:2px; background:var(--teal-500); display:inline-block;}
   .partner-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
     gap:16px;
   }
   .partner-card{
     border:1.5px solid rgba(14,26,43,.28);
     border-radius:var(--radius-md);
-    padding:20px;
+    padding:16px;
     background:#fff;
     display:flex; flex-direction:column; align-items:center; gap:12px;
     transition:border-color .3s ease, transform .3s var(--ease);
     text-decoration:none;
     cursor:pointer;
+    width:100%;
+    max-width:200px;
+    justify-self:center;
   }
   .partner-card:hover{border-color:var(--teal-500); transform:translateY(-4px);}
   .partner-logo{
-    width:100%; aspect-ratio:16/9;
+    width:100%;
+    aspect-ratio:1/1;
     border:1.5px solid rgba(14,26,43,.22);
     border-radius:15px;
+    overflow:hidden;
     background:var(--paper-dim);
     display:flex; align-items:center; justify-content:center;
     color:var(--mist); font-size:1.5rem;
+  }
+  .partner-logo img{
+    width:100%; height:100%;
+    object-fit:contain;
+    padding:14px;
+    box-sizing:border-box;
   }
   .partner-name{
     font-family:'JetBrains Mono',monospace;
@@ -1181,73 +1192,65 @@
       <div class="partner-grid">
 
         <a href="#" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"> 
-            <img src="semprebela.jpg" alt="Semprebela" style="width:100%;height:100%;object-fit:contain;padding:10px;">
+          <div class="partner-logo">
+            <img src="semprebela.jpg" alt="Sempre Bela">
           </div>
           <span class="partner-name">Sempre Bela</span>
         </a>
-
-       <!--  <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
-          <div class="partner-logo"><i class="ti ti-photo"></i></div>
-          <span class="partner-name">Nome do patrocinador</span>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
-          <div class="partner-logo"><i class="ti ti-photo"></i></div>
-          <span class="partner-name">Nome do patrocinador</span>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" style="display: none;" class="partner-card">
-          <div class="partner-logo"><i class="ti ti-photo"></i></div>
-          <span class="partner-name">Nome do patrocinador</span>
-        </a> -->
 
       </div>
 
       <h3 class="partners-subhead">Organização</h3>
       <div class="partner-grid">
-        
+
         <a href="https://www.instagram.com/farmaestacio_juazeirodonorte/" target="_blank" rel="noopener" class="partner-card">
           <div class="partner-logo">
-            <img src="farmaestacio.jpg" alt="FarmaciaEstacio" style="width:100%;height:100%;object-fit:contain;padding:10px;">
+            <img src="farmaestacio.jpg" alt="Curso de Farmácia - Estácio FMJ">
           </div>
           <span class="partner-name">Curso de Farmácia - Estacio FMJ</span>
         </a>
 
         <a href="#" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"><img src="lais.jpg" alt="Dralais" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <div class="partner-logo">
+            <img src="lais.jpg" alt="Dra. Laís">
+          </div>
           <span class="partner-name">Dra. Lais</span>
         </a>
 
         <a href="#" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"><img src="enaide.png" alt="Draenaide" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <div class="partner-logo">
+            <img src="enaide.png" alt="Dra. Enaide">
+          </div>
           <span class="partner-name">Dra. Enaide</span>
         </a>
 
         <a href="#" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"><img src="samuel.png" alt="Prof Samuel" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <div class="partner-logo">
+            <img src="samuel.png" alt="Prof. Samuel">
+          </div>
           <span class="partner-name">Prof. Samuel</span>
         </a>
 
-        <a href="https://sites.google.com/view/caf-estacio/" target="_blank" rel="noopener"  class="partner-card">
-          <div class="partner-logo"><img src="caf.jpg" alt="CAF" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+        <a href="https://sites.google.com/view/caf-estacio/" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-logo">
+            <img src="caf.jpg" alt="Centro Acadêmico de Farmácia">
+          </div>
           <span class="partner-name">Centro Academico de Farmacia</span>
         </a>
 
         <a href="https://sites.google.com/view/lafarc-estacio/" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"><img src="lafarc.jpg" alt="LAFARC" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <div class="partner-logo">
+            <img src="lafarc.jpg" alt="Liga Acadêmica de Farmácia Clínica">
+          </div>
           <span class="partner-name">Liga Academica de Farmacia Clinica</span>
         </a>
 
         <a href="https://www.instagram.com/atleticaahidra/" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"><img src="atletica.png" alt="Hidra" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
+          <div class="partner-logo">
+            <img src="atletica.png" alt="Atlética Hidra">
+          </div>
           <span class="partner-name">Atletica Hidra</span>
         </a>
-
-        <!-- <a href="#" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-logo"><img src="logoestacio.png" alt="Nome da organização" style="width:100%;height:100%;object-fit:contain;padding:10px;"></i></div>
-          <span class="partner-name">Nome da organização</span>
-        </a> -->
 
       </div>
     </div>
@@ -1290,7 +1293,6 @@
           </span>
           <span>Semana do<br>Farmacêutico</span>
         </a>
-        <!-- ===== REDE SOCIAL DO RODAPÉ ===== -->
         <div class="footer-socials">
           <a class="icon-link" href="https://www.instagram.com/farmaestacio_juazeirodonorte/" target="_blank" rel="noopener" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
         </div>
