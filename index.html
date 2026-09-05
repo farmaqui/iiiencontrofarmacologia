@@ -80,6 +80,57 @@
     border-radius:6px;
   }
 
+  /* ---------- Site Loader ---------- */
+  body.is-loading{overflow:hidden;}
+  .site-loader{
+    position:fixed; inset:0; z-index:9999;
+    background:radial-gradient(120% 140% at 15% 0%, var(--navy-700) 0%, var(--navy-900) 45%, var(--navy-950) 100%);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:22px;
+    transition:opacity .6s ease, visibility 0s linear 0s;
+  }
+  .site-loader.is-hidden{
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .6s ease, visibility 0s linear .6s;
+  }
+  .loader-spinner{
+    position:relative;
+    width:76px; height:76px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .loader-spinner::before{
+    content:"";
+    position:absolute; inset:0;
+    border:3px solid rgba(143,232,218,.18);
+    border-top-color:var(--teal-300);
+    border-radius:50%;
+    animation:loaderSpin .9s linear infinite;
+  }
+  .loader-mark{
+    width:54px; height:54px; border-radius:50%;
+    background:linear-gradient(135deg, var(--teal-400), var(--navy-700));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:1.5rem;
+    overflow:hidden;
+  }
+  .loader-mark img{width:100%; height:100%; object-fit:cover; border-radius:50%;}
+  @keyframes loaderSpin{to{transform:rotate(360deg);}}
+  .loader-text{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.8rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--teal-300);
+    margin:0;
+  }
+  .loader-dots span{animation:loaderDots 1.4s infinite; opacity:.2;}
+  .loader-dots span:nth-child(2){animation-delay:.2s;}
+  .loader-dots span:nth-child(3){animation-delay:.4s;}
+  @keyframes loaderDots{0%,80%,100%{opacity:.2;} 40%{opacity:1;}}
+  @media (prefers-reduced-motion: reduce){
+    .loader-spinner::before{animation:none; border-top-color:rgba(143,232,218,.4);}
+    .loader-dots span{animation:none; opacity:1;}
+  }
+
   /* ---------- Buttons ---------- */
   .btn{
     display:inline-flex;
@@ -698,7 +749,17 @@
   .reveal.in{opacity:1; transform:translateY(0);}
 </style>
 </head>
-<body>
+<body class="is-loading">
+
+<div id="siteLoader" class="site-loader" role="status" aria-live="polite" aria-label="Carregando site">
+  <div class="loader-spinner">
+    <span class="loader-mark">
+      <img src="iconiii.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <i class="ti ti-flask-2" style="display:none;"></i>
+    </span>
+  </div>
+  <p class="loader-text">Carregando<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
+</div>
 
 <header class="site-header">
   <div class="wrap">
@@ -1119,7 +1180,7 @@
         
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- LOCATION -->
   <section class="location" id="local">
@@ -1302,6 +1363,24 @@
 </footer>
 
 <script>
+  // Loading screen — wait for the page (including images) to finish loading
+  (function () {
+    const loader = document.getElementById('siteLoader');
+    if (!loader) return;
+    function hideLoader() {
+      setTimeout(() => {
+        loader.classList.add('is-hidden');
+        document.body.classList.remove('is-loading');
+        setTimeout(() => loader.remove(), 650);
+      }, 400);
+    }
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader);
+    }
+  })();
+
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
